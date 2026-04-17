@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>我的魔法实验室</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', sans-serif; 
+            text-align: center; 
+            padding-top: 100px; 
+            background-color: #2c3e50; 
+            color: white;
+            transition: background 0.5s; /* 变色平滑过渡 */
+        }
+        .card { 
+            background: rgba(255,255,255,0.1); 
+            backdrop-filter: blur(10px); /* 毛玻璃质感 */
+            padding: 40px; 
+            border-radius: 20px; 
+            display: inline-block; 
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+        button {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        button:hover { transform: scale(1.1); }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>✨ 魔法交互测试</h1>
+        <p>这是我亲手部署的第一个交互式网页。</p>
+        <button onclick="changeColor()">点击施放魔法</button>
+    </div>
+
+    <script>
+        function changeColor() {
+            // 随机生成一个颜色
+            const colors = ['#1abc9c', '#3498db', '#9b59b6', '#f1c40f', '#e67e22', '#e74c3c'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.background = randomColor;
+        }
+    </script>
+</body>
+</html>
